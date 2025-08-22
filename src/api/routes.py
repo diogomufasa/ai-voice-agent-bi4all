@@ -5,7 +5,7 @@ router = APIRouter()
 
 @router.get("/")
 async def root():
-    return {"message": "AI Voice Agent API is running!"}
+    return {"message": "AI Voice Agent API server is running!"}
 
 @router.get("/call/{phone_number}")
 async def run_call(phone_number: str):

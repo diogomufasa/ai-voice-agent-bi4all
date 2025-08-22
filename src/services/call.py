@@ -19,15 +19,15 @@ def make_call(phone_number=None):
             twiml= twiml_response()
         )
 
-        print(f"Chamada iniciada com sucesso!")
+        print(f"Voice call initiated successfully!")
         return call
     
 
     except Exception as e:
-        print(f"Erro ao fazer a chamada: {e}")
+        print(f"Error making call: {e}")
         return None
     except KeyboardInterrupt:
-        print("\n\nPrograma interrompido pelo utilizador.")
+        print("\n\nProgram interrupted by user.")
         return None
 
 
@@ -37,7 +37,7 @@ def twiml_response():
     connect = Connect()
     connect.virtual_agent(
         connector_name="Dialogflow_CX_BI4ALL_test",
-        # status_callback="https://virtual-agent-status-callback-662776724436.europe-west1.run.app"
+        # status_callback="your_status_callback_url"
     )
     response.append(connect)
     return response
